@@ -36,7 +36,6 @@ spec:
         app.kubernetes.io/name: katt-2048
         app.kubernetes.io/instance: katt-2048
     spec:
-      serviceAccountName: katt-2048
       containers:
         - name: katt-2048
           image: alexwhen/docker-2048

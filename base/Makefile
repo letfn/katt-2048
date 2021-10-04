@@ -1,8 +1,11 @@
-build: clean 2048.yaml
+build: clean main.yaml ../main.yaml
 
-2048.yaml: clean/2048.yaml
-	kustomize build > $@
+../main.yaml: main.yaml
+	kustomize build >$@
+
+main.yaml: clean/main.yaml
+	kustomize build clean >$@
 
 .PHONY: clean
 clean:
-	true
+	touch clean/main.yaml
